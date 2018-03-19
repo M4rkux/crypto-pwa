@@ -108,9 +108,9 @@ body {
     outline: none;
     cursor: pointer; }
   .header #butRefresh {
-    background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
+    background: url(../images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
-    background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
+    background: url(../images/ic_add_white_24px.svg) center center no-repeat; }
 
 .header__title {
   font-weight: 400;
@@ -338,23 +338,23 @@ body {
   background-repeat: no-repeat;
   background-size: contain; }
   .weather-forecast .icon.bitcoin {
-    background-image: url("/images/bitcoin.png"); }
+    background-image: url("../images/bitcoin.png"); }
   .weather-forecast .icon.bitcoin-cash {
-    background-image: url("/images/bitcoin_cash.png"); }
+    background-image: url("../images/bitcoin_cash.png"); }
   .weather-forecast .icon.dash {
-    background-image: url("/images/dash.png"); }
+    background-image: url("../images/dash.png"); }
   .weather-forecast .icon.dogecoin {
-    background-image: url("/images/dogecoin.png"); }
+    background-image: url("../images/dogecoin.png"); }
   .weather-forecast .icon.ethereum {
-    background-image: url("/images/ethereum.png"); }
+    background-image: url("../images/ethereum.png"); }
   .weather-forecast .icon.iota {
-    background-image: url("/images/iota.png"); }
+    background-image: url("../images/iota.png"); }
   .weather-forecast .icon.litecoin {
-    background-image: url("/images/litecoin.png"); }
+    background-image: url("../images/litecoin.png"); }
   .weather-forecast .icon.monero {
-    background-image: url("/images/monero.png"); }
+    background-image: url("../images/monero.png"); }
   .weather-forecast .icon.ripple {
-    background-image: url("/images/ripple.png"); }
+    background-image: url("../images/ripple.png"); }
 
 @media (max-width: 450px) {
   .weather-forecast .date, .weather-forecast .description {
