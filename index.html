@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto PWA</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Crypto PWA">
+  <link rel="apple-touch-icon" href="images/icons/icon-256x256.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-256x256.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">Crypto PWA</h1>
+    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButton" aria-label="Add"></button>
+  </header>
+
+  <main class="main">
+    <div class="card cardTemplate weather-forecast" hidden>
+      <div class="coin-id" hidden></div>
+      <div class="card-last-updated" hidden></div>
+      <div class="location"></div>
+      <div class="description"></div>
+      <div class="current">
+        <div class="visual">
+          <div class="icon"></div>
+        </div>
+        <div class="description">
+          <div class="symbol"></div>
+          <div class="rank"></div>
+          <div class="usd">
+            <span class="value"></span>
+            <span class="percent"></span>
+          </div>
+          <div class="btc"></div>
+        </div>
+      </div>
+      <div class="updated"></div>
+    </div>
+  </main>
+
+  <div class="dialog-container">
+    <div class="dialog">
+      <div class="dialog-title">Adicione uma moeda</div>
+      <div class="dialog-body">
+        <select id="selectCoinToAdd">
+          <option value="bitcoin">Bitcoin</option>
+          <option value="bitcoin-cash">Bitcoin Cash</option>
+          <option value="Dash">Dash</option>
+          <option value="Dogecoin">Dogecoin</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="Iota">Iota</option>
+          <option value="Monero">Monero</option>
+          <option value="Ripple">Ripple</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butAddCoin" class="button">Adicionar</button>
+        <button id="butAddCancel" class="button">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="loader" hidden>
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <!-- Uncomment the line below when ready to test with fake data -->
+  <script src="scripts/app.js" async></script>
+
+</body>
+</html>
