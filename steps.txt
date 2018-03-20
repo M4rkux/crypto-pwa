@@ -6,3 +6,23 @@
 4. Excluir os arquivos de cache de versão anterior
 5. Verificar requisições do fetch para responder por cache/fetch
 6. Criar arquivo de manifest
+
+
+# Cola
+'/',
+'/index.html',
+'/styles/inline.css',
+'/scripts/app.js',
+'/images/ic_add_white_24px.svg',
+'/images/ic_refresh_white_24px.svg',
+'/images/icons/icon-256x256.png',
+'/images/bitcoin_cash.png',
+'/images/bitcoin.png',
+'/images/dash.png',
+'/images/dogecoin.png',
+'/images/ethereum.png',
+'/images/iota.png',
+'/images/litecoin.png',
+'/images/monero.png',
+'/images/ripple.png',
+'/manifest.json '
