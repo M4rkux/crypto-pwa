@@ -1,4 +1,4 @@
-var cacheName = 'crypto-pwa-v2';
+var cacheName = 'crypto-pwa-v1';
 var dataCacheName = 'crypto-pwa-data-v1';
 var filesToCache = [
     '/',
