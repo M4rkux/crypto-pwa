@@ -142,14 +142,4 @@
     });
   }
 
-    if ('serviceWorker' in navigator) {
-        var url = '';
-        if (location.hostname === "m4rkux.github.io") {
-            url = '/crypto-pwa'
-        }
-        navigator.serviceWorker.register(url + '/service-worker.js').then(function () {
-            console.log('Service Worker Registered');
-        });    
-    }
-
 })();
