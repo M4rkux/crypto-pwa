@@ -1,23 +1,27 @@
 var cacheName = 'crypto-pwa-v1';
 var dataCacheName = 'crypto-pwa-data-v1';
+var url = '';
+if (location.hostname === "m4rkux.github.io") {
+    url = '/crypto-pwa'
+}
 var filesToCache = [
-    '/',
-    '/index.html',
-    '/styles/inline.css',
-    '/scripts/app.js',
-    '/images/ic_add_white_24px.svg',
-    '/images/ic_refresh_white_24px.svg',
-    '/images/icons/icon-256x256.png',
-    '/images/bitcoin_cash.png',
-    '/images/bitcoin.png',
-    '/images/dash.png',
-    '/images/dogecoin.png',
-    '/images/ethereum.png',
-    '/images/iota.png',
-    '/images/litecoin.png',
-    '/images/monero.png',
-    '/images/ripple.png',
-    '/manifest.json '
+    url + '/',
+    url + '/index.html',
+    url + '/styles/inline.css',
+    url + '/scripts/app.js',
+    url + '/images/ic_add_white_24px.svg',
+    url + '/images/ic_refresh_white_24px.svg',
+    url + '/images/icons/icon-256x256.png',
+    url + '/images/bitcoin_cash.png',
+    url + '/images/bitcoin.png',
+    url + '/images/dash.png',
+    url + '/images/dogecoin.png',
+    url + '/images/ethereum.png',
+    url + '/images/iota.png',
+    url + '/images/litecoin.png',
+    url + '/images/monero.png',
+    url + '/images/ripple.png',
+    url + '/manifest.json '
 ];
 
 self.addEventListener('install', function (e) {
