@@ -1,0 +1,12 @@
+{
+    "short_name": "Dojo",
+    "name": "CINQ Dojo PWA",
+    "icons": [
+      {
+        "src": "/images/icons/icon-256x256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      }
+    ],
+    "start_url": "index.html"
+  }
