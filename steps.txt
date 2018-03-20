@@ -1,0 +1,8 @@
+# DESAFIO #
+
+1. Registrar service worker
+2. Listar arquivos do shell da aplicação
+3. Adicionar arquivos do shell em cache
+4. Excluir os arquivos de cache de versão anterior
+5. Verificar requisições do fetch para responder por cache/fetch
+6. Criar arquivo de manifest
