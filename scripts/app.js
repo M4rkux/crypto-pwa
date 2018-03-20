@@ -25,7 +25,7 @@
     var selected = select.options[select.selectedIndex];
     var id = selected.value;
     var name = selected.textContent;
-    app.getCryptoCoinData(id);
+    app.getCryptoCoinData(id, name);
     app.selectedCoins.push({id: id, name: name});
     app.saveSelectedCoins();
     app.toggleAddDialog(false);
@@ -46,7 +46,7 @@
   app.updateCards = function() {
     var ids = Object.keys(app.visibleCards);
     ids.forEach(function(id) {
-      app.getCryptoCoinData(id);
+      app.getCryptoCoinData(id, name);
     });
   };
 
@@ -75,7 +75,7 @@
 
     card.querySelector('.weather-forecast .updated').textContent = dataLastUpdated.toLocaleDateString() + 
     ' ' + dataLastUpdated.toTimeString().split(' ')[0];
-    card.querySelector('.current .icon').classList.add(data.id);
+    card.querySelector('.current .icon').classList.add(data.id.toLowerCase());
     card.querySelector('.current .btc').textContent = data.price_btc;
     card.querySelector('.current .rank').textContent = data.rank;
     card.querySelector('.current .usd .value').textContent = '$' + data.price_usd;
@@ -89,9 +89,6 @@
     }
     card.querySelector('.current .symbol').textContent = data.symbol;
     // card.querySelector('.current .wind .direction').textContent = wind.direction;
-    var nextDays = card.querySelectorAll('.future .oneday');
-    var today = new Date();
-    today = today.getDay();
     if (app.isLoading) {
       app.spinner.setAttribute('hidden', true);
       app.isLoading = false;
@@ -99,8 +96,20 @@
   };
 
 
-  app.getCryptoCoinData = function(id) {
+  app.getCryptoCoinData = function(id, name) {
     var url = 'https://api.coinmarketcap.com/v1/ticker/' + id + '/';
+
+    var initial = {
+      id: id, 
+      name: name, 
+      symbol: 0, 
+      rank: 0, 
+      price_usd: 0, 
+      price_btc: 0, 
+      percent_change_24h: 0,
+      last_updated: new Date().getTime() / 1000
+    };
+    app.updateCoinCard(initial);
 
     if (!app.isLoading) {
       app.spinner.removeAttribute('hidden');
@@ -111,8 +120,11 @@
       return response.json();
     }).then(function(data) {
       app.updateCoinCard(data[0]);
-    }).catch(function (error) {
-      console.log('error', error);
+    }).catch(function () {
+      if (app.isLoading) {
+        app.spinner.setAttribute('hidden', true);
+        app.isLoading = false;
+      }
     });
   };
 
@@ -126,12 +138,12 @@
     app.selectedCoins = localStorage.selectedCoins;
     app.selectedCoins = JSON.parse(app.selectedCoins);
     app.selectedCoins.forEach(function(coin) {
-      app.getCryptoCoinData(coin.id);
+      app.getCryptoCoinData(coin.id, coin.name);
     });
   }
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../service-worker.js').then(function () {
+    navigator.serviceWorker.register('./service-worker.js').then(function () {
       console.log('Service Worker Registered');
     });
   }
