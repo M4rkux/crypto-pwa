@@ -5,12 +5,15 @@
 3. Adicionar arquivos do shell em cache
 4. Excluir os arquivos de cache de versão anterior
 5. Verificar requisições do fetch para responder por cache/fetch
-6. Criar arquivo de manifest
+6. Retornar as requisições dos arquivos do app direto do cache
+7. Retornar requisições de dados direto da internet e salvar em cache. Se falhar, retornar do cache
+8. Criar arquivo de manifest
 
 
-# Cola
+# Arquivos
 '/',
 '/index.html',
+'/favicon.ico',
 '/styles/inline.css',
 '/scripts/app.js',
 '/images/ic_add_white_24px.svg',
